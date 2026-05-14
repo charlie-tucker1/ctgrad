@@ -1,0 +1,27 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "nanobind>=2.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "ctgrad"
+version = "0.0.1"
+description = "A from-scratch autograd engine with CUDA backend"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "ipython",
+    "jupyter",
+    "torch",  # for gradient validation only
+]
+
+[tool.scikit-build]
+cmake.version = ">=3.27"
+cmake.build-type = "Release"
+build-dir = "build/{wheel_tag}"
+wheel.packages = ["src/ctgrad"]
