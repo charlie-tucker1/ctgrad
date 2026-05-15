@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    },
+    {
+      "name": "Python: Run Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-x", "-v", "${workspaceFolder}/tests"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "C++: Attach to Python",
+      "type": "cppdbg",
+      "request": "attach",
+      "program": "${workspaceFolder}/.venv/bin/python",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "CUDA: Launch Current File",
+      "type": "cuda-gdb",
+      "request": "launch",
+      "program": "${workspaceFolder}/.venv/bin/python",
+      "args": ["${file}"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

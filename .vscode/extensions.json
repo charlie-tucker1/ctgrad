@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "llvm-vs-code-extensions.vscode-clangd",
+    "ms-vscode.cmake-tools",
+    "nvidia.nsight-vscode-edition",
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "twxs.cmake",
+    "charliermarsh.ruff"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.cpptools",
+    "github.copilot",
+    "github.copilot-chat"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (debug)",
+      "type": "shell",
+      "command": "uv pip install -e \".[dev]\" --force-reinstall --no-deps",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Test",
+      "type": "shell",
+      "command": "pytest -x -v tests/",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Clean build",
+      "type": "shell",
+      "command": "rm -rf build/"
+    }
+  ]
+}
