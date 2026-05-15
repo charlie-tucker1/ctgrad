@@ -18,6 +18,7 @@ dev = [
     "ipython",
     "jupyter",
     "torch",  # for gradient validation only
+    "nanobind>=2.0",
 ]
 
 [tool.scikit-build]
